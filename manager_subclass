@@ -1,0 +1,34 @@
+public class Manager extends Employee {
+    private String department;
+
+    public Manager(String name, String position, double wage, int yearsOfService, String department, String employmentType) {
+        super(name, position, wage, yearsOfService, employmentType);
+        this.department = department;
+    }
+
+    @Override
+    public double calculateBonus() {
+        return getWage() * 0.10 * getYearsOfService(); // Example bonus calculation
+    }
+
+    @Override
+    public void conductPerformanceReview() {
+        System.out.println("Conducting performance review for manager: " + getName());
+    }
+}
+
+public class StaffMember extends Employee {
+    public StaffMember(String name, String position, double wage, int yearsOfService, String employmentType) {
+        super(name, position, wage, yearsOfService, employmentType);
+    }
+
+    @Override
+    public double calculateBonus() {
+        return getWage() * 0.05 * getYearsOfService(); // Simpler bonus
+    }
+
+    @Override
+    public void conductPerformanceReview() {
+        System.out.println("Reviewing performance for staff member: " + getName());
+    }
+}
