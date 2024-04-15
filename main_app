@@ -1,0 +1,16 @@
+public class Main {
+    public static void main(String[] args) {
+        HRSystem hrSystem = new HRSystem();
+
+        Manager john = new Manager("John Doe", "HR Manager", 50000, 5, "Human Resources", "Full-Time");
+        StaffMember jane = new StaffMember("Jane Smith", "HR Staff", 30000, 3, "Part-Time");
+
+        hrSystem.addEmployee(john);
+        hrSystem.addEmployee(jane);
+
+        hrSystem.updateEmployeeWage(jane, 32000); // Update wage example
+        hrSystem.displayOrgChart();
+
+        hrSystem.removeEmployee(john); // Remove an employee example
+    }
+}
