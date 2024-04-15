@@ -1,0 +1,33 @@
+public abstract class Employee {
+    private String name;
+    private String position;
+    private double wage;
+    private int yearsOfService;
+    private String employmentType; // New field for employment type
+
+    public Employee(String name, String position, double wage, int yearsOfService, String employmentType) {
+        this.name = name;
+        this.position = position;
+        this.wage = wage;
+        this.yearsOfService = yearsOfService;
+        this.employmentType = employmentType;
+    }
+
+    // Getters and setters for all fields
+    // Additional methods
+    public abstract double calculateBonus();
+    public abstract void conductPerformanceReview();
+
+    public String getEmploymentType() {
+        return employmentType;
+    }
+
+    public void setEmploymentType(String employmentType) {
+        this.employmentType = employmentType;
+    }
+
+    public void displayDetails() {
+        System.out.println("Name: " + name + ", Position: " + position + ", Wage: $" + wage
+            + ", Years of Service: " + yearsOfService + ", Employment Type: " + employmentType);
+    }
+}
