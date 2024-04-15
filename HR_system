@@ -1,0 +1,30 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class HRSystem {
+    private List<Employee> employees;
+
+    public HRSystem() {
+        employees = new ArrayList<>();
+    }
+
+    public void addEmployee(Employee employee) {
+        employees.add(employee);
+    }
+
+    public void removeEmployee(Employee employee) {
+        employees.remove(employee);
+    }
+
+    public void updateEmployeeWage(Employee employee, double newWage) {
+        employee.setWage(newWage);
+    }
+
+    public void displayOrgChart() {
+        for (Employee emp : employees) {
+            emp.displayDetails();
+            System.out.println("Bonus for the year: $" + emp.calculateBonus());
+            emp.conductPerformanceReview();
+        }
+    }
+}
